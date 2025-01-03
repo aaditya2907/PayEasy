@@ -12,7 +12,7 @@ function SendMoney() {
 
   async function SendMoney() {
     const res = await axios.post(
-      "http://localhost:3000/api/v1/account/transfer",
+      "https://payeasy-ek8k.onrender.com/api/v1/account/transfer",
       { to: id, amount: amount },
       {
         headers: {

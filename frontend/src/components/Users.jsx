@@ -12,7 +12,7 @@ export default function Users() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/v1/user/bulk?filter=${filter}`, {
+      .get(`https://payeasy-ek8k.onrender.com/api/v1/user/bulk?filter=${filter}`, {
         headers: {
           authorization: "Bearer " + localStorage.getItem("token"),
         },

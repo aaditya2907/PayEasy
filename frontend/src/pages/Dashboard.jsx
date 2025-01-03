@@ -12,7 +12,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     async function getName() {
-      const res = await axios.get("http://localhost:3000/api/v1/user/name", {
+      const res = await axios.get("https://payeasy-ek8k.onrender.com/api/v1/user/name", {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),
         },
@@ -24,7 +24,7 @@ export default function Dashboard() {
   useEffect(() => {
     const fetchdata = async () => {
       const res = await axios.get(
-        "http://localhost:3000/api/v1/account/balance",
+        "https://payeasy-ek8k.onrender.com/api/v1/account/balance",
         {
           headers: {
             authorization: "Bearer " + localStorage.getItem("token"),

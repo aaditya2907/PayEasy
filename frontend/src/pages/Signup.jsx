@@ -15,12 +15,15 @@ function Signup() {
   const [password, setPassword] = useState("");
 
   async function SignUpHandler() {
-    const res = await axios.post("http://localhost:3000/api/v1/user/signup", {
-      firstName,
-      lastName,
-      username,
-      password,
-    });
+    const res = await axios.post(
+      "https://payeasy-ek8k.onrender.com/api/v1/user/signup",
+      {
+        firstName,
+        lastName,
+        username,
+        password,
+      }
+    );
     localStorage.setItem("token", res.data.token);
     if (res.status == 200) {
       navigate("/dashboard");
