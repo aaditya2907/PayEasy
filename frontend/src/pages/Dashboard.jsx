@@ -37,12 +37,47 @@ export default function Dashboard() {
     fetchdata();
   }, []);
   return (
-    <div>
+    <div className="min-h bg-gray-100 mt-16">
       <Appbar />
-      <div className="m-8">
-        <div>Hello, {name}</div>
-        <Balance value={balance} />
-        <Users />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="grid gap-6 md:grid-cols-2">
+          {/* Greeting Card */}
+          <div className="bg-white rounded-lg shadow p-6 flex items-center space-x-4">
+            <div className="w-16 h-16 rounded-full bg-green-500 flex items-center justify-center">
+              <span className="text-2xl font-bold text-white">
+                {name ? name[0].toUpperCase() : "U"}
+              </span>
+            </div>
+            <div>
+              <h2 className="text-2xl font-semibold text-gray-800">
+                Welcome back,
+              </h2>
+              <p className="text-xl text-gray-600">{name}</p>
+            </div>
+          </div>
+
+          {/* Balance Card */}
+          <div className="bg-white rounded-lg shadow p-6">
+            <h3 className="text-lg font-medium text-gray-600 mb-2">
+              Current Balance
+            </h3>
+            <div className="text-3xl font-bold text-gray-800">
+              ₹ {balance.toFixed(2)}
+            </div>
+          </div>
+        </div>
+
+        {/* Users Section */}
+        <div className="mt-8 bg-white rounded-lg shadow">
+          <div className="p-6 border-b">
+            <h3 className="text-xl font-semibold text-gray-800">
+              People you can pay
+            </h3>
+          </div>
+          <div className="p-6">
+            <Users />
+          </div>
+        </div>
       </div>
     </div>
   );
